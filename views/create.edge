@@ -1,5 +1,9 @@
 @layout("layout.app")
 
+@section("styles")
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+@endsection
+
 @section("content")
 <!-- Page Header -->
     <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
@@ -22,12 +26,6 @@
                 <form action="/post/store" method="POST" encType="multipart/form-data">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>Username</label>
-                            <input type="text" name="username" class="form-control" placeholder="Username">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
                             <label>Title</label>
                             <input type="text" name="title" class="form-control" placeholder="Title">
                         </div>
@@ -47,7 +45,7 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Content</label>
-                            <textarea type="text" name="content" rows="5" cols="30" class="form-control" placeholder="Content"></textarea>
+                            <textarea id="textareaContent" type="text" name="content" rows="5" cols="30" class="form-control" placeholder="Content"></textarea>
                         </div>
                     </div>
                     <div class="form-group mt-5"><input type="file" name="image" class="form-control-file"></div>
@@ -57,4 +55,11 @@
         </div>
     </div>
 
+@endsection
+
+@section("scripts")
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+  <script>
+    $('#textareaContent').summernote();
+  </script>
 @endsection

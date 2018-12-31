@@ -1,2 +1,4 @@
-# node_mongo_blog
-node_mongo_blog
+# Node Mongo Blog
+
+
+# Instructions
