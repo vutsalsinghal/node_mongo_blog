@@ -48,8 +48,15 @@
                             <textarea id="textareaContent" type="text" name="content" rows="5" cols="30" class="form-control" placeholder="Content"></textarea>
                         </div>
                     </div>
+                    <div class="control-group">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" name="publish" class="form-check-input" value="true">Publish?
+                            </label>
+                        </div>
+                    </div>
                     <div class="form-group mt-5"><input type="file" name="image" class="form-control-file"></div>
-                    <button class="btn my-4 btn-primary">Create</button>
+                    <button class="btn my-4 btn-primary">Save</button>
                 </form>
             </div>
         </div>
@@ -60,6 +67,8 @@
 @section("scripts")
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
   <script>
-    $('#textareaContent').summernote();
+    $('#textareaContent').summernote({
+        
+    });
   </script>
 @endsection

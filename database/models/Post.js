@@ -14,7 +14,11 @@ const PostSchema = new mongoose.Schema({
         type: Date,
         default: new Date(),
     },
-    image: String
+    image: String,
+    publish: {
+        type:Boolean,
+        default:false
+    }
 })
 
 module.exports = new mongoose.model("Post", PostSchema);

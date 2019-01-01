@@ -36,6 +36,7 @@ const redirectIfAuthenticatedMiddleware = require("./middleware/redirectIfAuthen
 
 const createPostController = require("./controllers/createPost");
 const homePageController = require("./controllers/homePage");
+const myPostsController = require("./controllers/myPosts");
 const storePostController = require("./controllers/storePost");
 const getPostController = require("./controllers/getPost");
 const createUserContoller = require("./controllers/createUser");
@@ -45,6 +46,7 @@ const loginUserController = require("./controllers/loginUser");
 const logoutController = require("./controllers/logout");
 
 app.get("/", homePageController);
+app.get("/myPosts", authMiddleware, myPostsController);
 
 app.get("/post/new", authMiddleware, createPostController);
 app.post("/post/store", authMiddleware, storePostMiddleware, storePostController);
